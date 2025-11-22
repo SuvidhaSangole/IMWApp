@@ -1,0 +1,76 @@
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 15px;
+  background: #f7f9fc;
+}
+
+.card {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+}
+
+.card a{
+  text-decoration: none;
+  color: #4e8cff;
+  font-weight: 600
+
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: 600;
+  background-color: rgb(236, 242, 245);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+th, td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  background: #f0f4ff;
+  font-weight: bold;
+}
+
+tr:hover {
+  background: #f9fbff;
+  transition: 0.2s;
+}
+
+
+.btn-danger {
+  background-color: #5aaab8;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-danger:hover {
+  background-color: #eb0000;
+}
+td a.btn-secondary:hover{
+  margin-bottom: 5px;
+  color: hsla(0, 84%, 23%, 0.856);
+  
+  border: none;
+  
+  border-radius: 5px;
+  cursor: pointer;
+ 
+  
+}

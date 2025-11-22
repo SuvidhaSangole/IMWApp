@@ -1,0 +1,61 @@
+ 
+    
+<div class="container">
+  <div class="card">
+    <a routerLink="/create-issue">Create Issue</a>
+    <hr />
+    <h2>All Issues</h2>
+
+    <!-- 🔍 FILTER SECTION -->
+    <div class="filters" style="margin-bottom: 20px; display: flex; gap: 15px;">
+      
+      <!-- Priority Filter -->
+      <select [(ngModel)]="selectedPriority" (change)="filterIssues()" class="form-select">
+        <option value="">All Priorities</option>
+        <option *ngFor="let p of priorities" [value]="p">{{ p | titlecase }}</option>
+      </select>
+
+      <!-- Status Filter -->
+      <select [(ngModel)]="selectedStatus" (change)="filterIssues()" class="form-select">
+        <option value="">All Status</option>
+        <option *ngFor="let s of statuses" [value]="s">{{ s | titlecase }}</option>
+      </select>
+
+      <!-- Reset Filter -->
+      <button class="btn-secondary" (click)="resetFilter()">Reset</button>
+    </div>
+
+    <!-- TABLE -->
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Priority</th>
+          <th>Status</th>
+          <th>Assignee</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let i of issues">
+          <td>{{ i.id }}</td>
+          <td>{{ i.title }}</td>
+          <td>{{ i.description }}</td>
+          <td>{{ i.priority | titlecase }}</td>
+          <td>{{ i.status | titlecase }}</td>
+          <td>{{ i.assignee }}</td>
+
+          <td>
+            <a [routerLink]="['/edit', i.id]" class="btn-secondary">Edit</a>
+            <br><hr />
+            <button class="btn-danger" (click)="deleteIssue(i.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>

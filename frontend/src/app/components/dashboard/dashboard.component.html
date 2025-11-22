@@ -1,0 +1,38 @@
+
+<div br class="dashboard-container">
+
+  <h1 class="title">Issue Management Web Application</h1>
+  <p class="subtitle">Welcome to IMWApp — Manage, Track & Resolve Issues Efficiently</p>
+
+  <div class="card-grid">
+
+    <!-- Create Issue Card -->
+    <div class="dash-card">
+      <h2>Create New Issue</h2>
+      <p>Register a new issue with priority, status, and assignee.</p>
+      <button routerLink="/create-issue" class="btn-primary">Create Issue</button>
+    </div>
+
+    <!-- View All Issues -->
+    <div class="dash-card">
+      <h2>Update / Edit Issues</h2>
+      <p>See all created issues in a structured list or filter them.</p>
+      <button routerLink="/issue-list" class="btn-secondary">Issue List</button>
+    </div>
+
+    <!-- Manage Issues -->
+    <div class="dash-card">
+      <h2>Dashboard - Reports</h2>
+      <p>Analyze issues by priority, status and take quick actions.</p>
+      <button routerLink="/dashboard-report" class="btn-tertiary">View Dashboard Reports</button>
+    </div>
+
+  </div>
+
+  <br>
+  <div br>
+    <a routerLink="/find-issue" class="find-issue-link" aria-placeholder="Enter Issue Id">🔍 Find Issue by ID</a>
+  </div>
+</div>
+
+

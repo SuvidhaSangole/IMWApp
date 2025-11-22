@@ -1,0 +1,32 @@
+<div class="container">
+
+  <h2>🔍 Search Issue by ID</h2>
+
+  <div class="search-box">
+    <input type="number" placeholder="Enter Issue ID"
+           [(ngModel)]="issueId" />
+
+    <button (click)="onSearch()">Search</button>
+  </div>
+
+  <!-- Loading -->
+  <p *ngIf="loading" class="loading">Searching...</p>
+
+  <!-- Error message -->
+  <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+
+  <!-- Issue Details Card -->
+  <div *ngIf="issue" class="card">
+    <h3>Issue Details</h3>
+    <p><strong>ID:</strong> {{ issue.id }}</p>
+    <p><strong>Title:</strong> {{ issue.title }}</p>
+    <p><strong>Description:</strong> {{ issue.description }}</p>
+    <p><strong>Priority:</strong> {{ issue.priority }}</p>
+    <p><strong>Status:</strong> {{ issue.status }}</p>
+    <p><strong>Assignee:</strong> {{ issue.assignee }}</p>
+    <p><strong>Created:</strong> {{ issue.createdDate | date:'medium' }}</p>
+    <p><strong>Updated:</strong> {{ issue.updatedDate | date:'medium' }}</p>
+  </div>
+
+  
+</div>

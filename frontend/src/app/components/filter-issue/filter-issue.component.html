@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="card">
+    <h2>Filter Issues</h2>
+
+    <div class="filter-row">
+
+      <select [(ngModel)]="selectedPriority" (change)="filterByPriority()">
+        <option value="">Select Priority</option>
+        <option *ngFor="let p of priorityList" [value]="p">{{ p | titlecase }}</option>
+      </select>
+
+      <select [(ngModel)]="selectedStatus" (change)="filterByStatus()">
+        <option value="">Select Status</option>
+        <option *ngFor="let s of statusList" [value]="s">{{ s | titlecase }}</option>
+      </select>
+
+      <button class="btn-primary" (click)="filterByBoth()">Filter Both</button>
+    </div>
+
+    <hr>
+
+    <table *ngIf="filteredIssues.length > 0">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Priority</th>
+          <th>Status</th>
+          <th>Assignee</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let i of filteredIssues">
+          <td>{{ i.id }}</td>
+          <td>{{ i.title }}</td>
+          <td>{{ i.priority | titlecase }}</td>
+          <td>{{ i.status | titlecase }}</td>
+          <td>{{ i.assignee }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p *ngIf="filteredIssues.length === 0" class="empty">No issues found</p>
+
+  </div>
+</div>
